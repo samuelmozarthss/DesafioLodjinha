@@ -2,6 +2,7 @@ package com.example.aulalodjinha.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity(), NavigationDelegate {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val navigator by lazy { findNavController(R.id.nav_host_fragment) }
+    private val navigator by lazy { findNavController(R.id.nav_host_fragment)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +52,9 @@ class MainActivity : AppCompatActivity(), NavigationDelegate {
             when(destination.id) {
                 R.id.mainFragment -> {
                     binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+                }
+                R.id.aboutFragment -> {
+                    binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN)
                 }
                 else -> {
                 }

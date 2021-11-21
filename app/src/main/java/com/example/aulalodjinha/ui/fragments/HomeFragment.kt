@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.PagerSnapHelper
+import br.com.lodjinha.repositories.LodjinhaRepository
+import br.com.lodjinha.ui.viewmodels.MainViewModel
 import com.example.aula2_iesb_lodjinha.api.RetrofitInstance
-import com.example.aula2_iesb_lodjinha.repositories.LodjinhaRepository
 import com.example.aula2_iesb_lodjinha.ui.adapters.BannerAdapter
 import com.example.aula2_iesb_lodjinha.ui.adapters.CategoriasAdapter
 import com.example.aula2_iesb_lodjinha.ui.adapters.ProductsAdapter
-import com.example.aula2_iesb_lodjinha.ui.viewmodels.MainViewModel
 import com.example.aula2_iesb_lodjinha.ui.viewmodels.MainViewModelProvideFactory
 import com.example.aula2_iesb_lodjinha.utils.toggleVisibilty
 import com.example.aulalodjinha.databinding.FragmentHomeBinding
@@ -67,10 +67,15 @@ class HomeFragment : Fragment() {
         binding.maisVendidosRv.adapter = maisVendidosAdapter
         maisVendidosAdapter.setOnItemClickListener { produtoResponse ->
             findNavController().navigate(
-                ProductsListFragmentDirections.actionProductsListFragmentToItemDetailFragment(
-                    nome = produtoResponse.nome,
-                    descricao = produtoResponse.descricao
-
+                HomeFragmentDirections.actionMainFragmentToItemDetailFragment(
+                    title = produtoResponse.nome,
+                    productId = produtoResponse.id,
+                    tvProductCategory = produtoResponse.categoria.descricao,
+                    tvProdcutName = produtoResponse.nome,
+                    tvProductPrice2 = produtoResponse.precoPor.toString(),
+                    tvProductPriceFrom2 = produtoResponse.precoDe.toString(),
+                    tvProductDescription = produtoResponse.descricao,
+                    urlImagem = produtoResponse.urlImagem
                 )
             )
         }
@@ -98,7 +103,9 @@ class HomeFragment : Fragment() {
                     binding.progress.toggleVisibilty(true)
                 }
                 viewState.error -> {
-                    // TODO Criar placeholder caso de erro
+                    findNavController().navigate(
+                        HomeFragmentDirections.actionMainFragmentToFailFragment()
+                    )
                 }
                 viewState.data != null -> {
                     binding.progress.toggleVisibilty(false)

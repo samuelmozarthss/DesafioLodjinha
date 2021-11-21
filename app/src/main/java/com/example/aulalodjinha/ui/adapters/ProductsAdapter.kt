@@ -39,9 +39,8 @@ class ProductsAdapter :
                     }
 
                     descricaoProduto.text = model.descricao
-
-                    dePriceProduct.text = "R$ ${model.precoDe}"
-                    porPriceProduct.text = "R$ ${model.precoPor}"
+                    dePriceProduct.text = "De R$${model.precoDe}"
+                    porPriceProduct.text = "Por R$${model.precoPor}"
 
                     root.setOnClickListener {
                         onItemClickListener?.invoke(model)

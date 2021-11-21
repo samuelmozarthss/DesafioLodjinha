@@ -2,7 +2,8 @@ package com.example.aula2_iesb_lodjinha.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.aula2_iesb_lodjinha.repositories.LodjinhaRepository
+import br.com.lodjinha.repositories.LodjinhaRepository
+import br.com.lodjinha.ui.viewmodels.MainViewModel
 
 class MainViewModelProvideFactory(
     private val repository: LodjinhaRepository

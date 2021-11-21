@@ -8,37 +8,69 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.aula2_iesb_lodjinha.ui.fragments.HomeFragment"
-        android:label="O lodjinha"
-        tools:layout="@layout/fragment_home" >
+        android:label="O Lodjinha"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_mainFragment_to_productsListFragment"
             app:destination="@id/productsListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_failFragment"
+            app:destination="@id/failFragment" />
     </fragment>
     <fragment
         android:id="@+id/productsListFragment"
         android:name="com.example.aula2_iesb_lodjinha.ui.fragments.ProductsListFragment"
-        tools:layout="@layout/fragment_products_list" >
+        android:label="product_list_fragment"
+        tools:layout="@layout/fragment_products_list">
         <argument
             android:name="title"
             app:argType="string" />
         <argument
             android:name="categoryId"
             app:argType="integer" />
-        <action
-            android:id="@+id/action_productsListFragment_to_itemDetailFragment"
-            app:destination="@id/itemDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemDetailFragment"
         android:name="com.example.aulalodjinha.ui.fragments.ItemDetailFragment"
-        android:label="fragment_item_detail"
-        tools:layout="@layout/fragment_item_detail" >
+        android:label="item_detail_fragment"
+        tools:layout="@layout/fragment_item_detail">
         <argument
-            android:name="nome"
+            android:name="title"
             app:argType="string" />
         <argument
-            android:name="descricao"
+            android:name="productId"
+            app:argType="integer" />
+        <argument
+            android:name="tvProductCategory"
+            app:argType="string" />
+        <argument
+            android:name="tvProdcutName"
+            app:argType="string" />
+        <argument
+            android:name="tvProductPrice2"
+            app:argType="string" />
+        <argument
+            android:name="tvProductPriceFrom2"
+            app:argType="string" />
+        <argument
+            android:name="tvProductDescription"
+            app:argType="string" />
+        <argument
+            android:name="urlImagem"
             app:argType="string" />
 
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.aulalodjinha.ui.fragments.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/failFragment"
+        android:name="com.example.aulalodjinha.ui.fragments.FailFragment"
+        android:label="fragment_fail"
+        tools:layout="@layout/fragment_fail" />
 </navigation>
