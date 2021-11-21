@@ -32,19 +32,16 @@ class CategoriasAdapter :
                     listener(onError = {request, throwable ->
                         println(throwable)
                     })
-
                 }
 
                 setOnClickListener {
                     onItemClickListener?.invoke(categoria)
                 }
-
             }
 
             binding.categorieTitleText.text = categoria.descricao
 
         }
-
     }
 
     companion object {
@@ -63,7 +60,6 @@ class CategoriasAdapter :
                 ): Boolean {
                     return oldItem.id == newItem.id
                 }
-
             }
     }
 

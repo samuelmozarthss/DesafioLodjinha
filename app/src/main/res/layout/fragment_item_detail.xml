@@ -15,11 +15,14 @@
             android:id="@+id/productCategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="12dp"
             android:fontFamily="sans-serif-medium"
-            android:textColor="@color/white"
+            android:text="Games"
+            android:textColor="@color/primaryColor"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageProduct" />
 
         <ImageView
             android:id="@+id/imageProduct"
@@ -44,7 +47,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageProduct" />
+            app:layout_constraintTop_toTopOf="@+id/productCategory" />
 
         <View
             android:id="@+id/divider"
@@ -95,17 +98,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
-        <TextView
-            android:id="@+id/descricaProduto"
+        <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:text="Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recente"
             android:textSize="@dimen/textsize_large"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/id_item" />
+            app:layout_constraintTop_toBottomOf="@+id/id_item">
+
+            <TextView
+                android:id="@+id/descricaProduto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado."
+                android:textSize="@dimen/textsize_large" />
+
+        </ScrollView>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/reserv"

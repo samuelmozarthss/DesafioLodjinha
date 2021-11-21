@@ -90,7 +90,6 @@ class HomeFragment : Fragment() {
                     title = categoria.descricao,
                     categoryId = categoria.id
                 )
-
             )
         }
     }
@@ -126,8 +125,6 @@ class HomeFragment : Fragment() {
             }
         }
     }
-
-    // TODO SETUP OBSERVERS AND POPULATE RECYCLERVIEW
 
     private fun setupBannerRv() {
         bannerAdapter = BannerAdapter()

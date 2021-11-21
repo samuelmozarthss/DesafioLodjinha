@@ -21,5 +21,4 @@ class FailFragment : Fragment() {
         _binding = FragmentFailBinding.inflate(inflater)
         return binding.root
     }
-
 }

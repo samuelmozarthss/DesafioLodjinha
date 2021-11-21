@@ -2,10 +2,8 @@
     <string name="app_name">O Lodjinha</string>
     <string name="home_title">Inicio</string>
     <string name="about_title">Sobre o app</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="reservado">Reservado</string>
-    <string name="reseverd_product">Reservado com sucesso!</string>
-    <string name="erro_loading_image">Erro ao carregar imagem</string>
-    <string name="erro_loading_data">Erro ao carregar os dados</string>
+    <string name="reseverd_product">Reservado!</string>
+    <string name="erro_loading_image">Erro ao carregar imagem :C</string>
+    <string name="erro_loading_data">Erro ao carregar os dados :C</string>
 </resources>

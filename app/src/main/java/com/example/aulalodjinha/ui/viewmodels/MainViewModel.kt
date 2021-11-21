@@ -25,7 +25,8 @@ class MainViewModel(
     fun getMainHomeData() = viewModelScope.launch {
         _homeDataLiveData.postValue(HomeViewState(
             loading = true
-        ))
+            )
+        )
 
         val time1 = measureTimeMillis {
             val bannerResponse = async {repository.getBanner()}

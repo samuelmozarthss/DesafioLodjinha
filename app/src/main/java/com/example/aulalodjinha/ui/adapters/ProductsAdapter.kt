@@ -35,7 +35,6 @@ class ProductsAdapter :
                                 println(request)
                             }
                         )
-
                     }
 
                     descricaoProduto.text = model.descricao
@@ -45,11 +44,8 @@ class ProductsAdapter :
                     root.setOnClickListener {
                         onItemClickListener?.invoke(model)
                     }
-
                 }
-
             }
-
         }
 
     companion object {
@@ -68,7 +64,6 @@ class ProductsAdapter :
                 ): Boolean {
                     return oldItem.id == newItem.id
                 }
-
             }
     }
 
@@ -96,5 +91,4 @@ class ProductsAdapter :
     fun setOnItemClickListener(clickListener: (GetMaisVendidosResponse.ProdutoResponse) -> Unit ) {
         onItemClickListener = clickListener
     }
-
 }

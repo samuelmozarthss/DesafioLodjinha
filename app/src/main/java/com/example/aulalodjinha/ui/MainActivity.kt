@@ -23,22 +23,17 @@ class MainActivity : AppCompatActivity(), NavigationDelegate {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
-
         setupNavigationView()
-
         setupNavigation()
-
     }
 
     private fun setupNavigation() {
         navigator.addOnDestinationChangedListener { _, destination, _ ->
 
-            // Set navigation view lock
             binding.drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
 
-
-            // Add font to toolbar title
             for (i in 0 until binding.topAppBar.childCount) {
                 val view = binding.topAppBar.getChildAt(i)
                 if (view is android.widget.TextView && view.text == destination.label) {
@@ -59,7 +54,6 @@ class MainActivity : AppCompatActivity(), NavigationDelegate {
                 else -> {
                 }
             }
-
         }
     }
 

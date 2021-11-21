@@ -20,17 +20,13 @@ class BannerAdapter :
             fun bind(banner: GetBannerResponse.Banner) {
                 binding.image.apply {
                     load(banner.urlImagem) {
-
                     }
 
                     setOnClickListener {
                         onItemClickListener?.invoke(banner)
                     }
-
                 }
-
             }
-
         }
 
     companion object {
@@ -49,7 +45,6 @@ class BannerAdapter :
                 ): Boolean {
                     return oldItem.id == newItem.id
                 }
-
             }
     }
 
@@ -77,5 +72,4 @@ class BannerAdapter :
     fun setOnItemClickListener(clickListener: (GetBannerResponse.Banner) -> Unit ) {
         onItemClickListener = clickListener
     }
-
 }
